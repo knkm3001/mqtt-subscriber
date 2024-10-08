@@ -15,9 +15,6 @@ broker = os.getenv('MQTT_BROKER_IP')
 port = int(os.getenv('MQTT_BROKER_PORT'))
 topic = os.getenv('MQTT_TOPIC')
 
-admin = os.getenv('ADMIN_ID')
-passwd = os.getenv('ADMIN_PW') 
-
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 client_id = 'subscriber-k8s-server'
