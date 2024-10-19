@@ -18,8 +18,8 @@ k8sにデプロイする前に以下対応を行って開発及びテストす�
 
 以下実行し、コンテナへアクセス
 ```
->> docker build -t core.harbor.k8s-cluster.local/sensor-data/mqtt-subscribe:latest . 
->> docker run --rm  --env-file .env -d core.harbor.k8s-cluster.local/sensor-data/mqtt-subscribe:latest
+>> docker build -t core.harbor.ing.k8s-cluster.internal/sensor-data/mqtt-subscribe:latest . 
+>> docker run --rm  --env-file .env -d core.harbor.ing.k8s-cluster.internal/sensor-data/mqtt-subscribe:latest
 >> docker exec -it <container id> /bin/bash
 ```
 
@@ -33,5 +33,5 @@ fin
 
 問題なさそうならpush
 ```
->> docker push core.harbor.k8s-cluster.local/sensor-data/mqtt-subscribe:latest
+>> docker push core.harbor.ing.k8s-cluster.internal/sensor-data/mqtt-subscribe:latest
 ```

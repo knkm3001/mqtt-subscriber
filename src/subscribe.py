@@ -4,7 +4,7 @@ import logging
 from datetime import datetime, timedelta, timezone
 
 from setting import session
-from models import CO2SensorEdge
+from models import AkizukiSocData
 
 import paho.mqtt.client as mqtt
 
@@ -38,9 +38,9 @@ def connect_mqtt():
             
             logging.info(f"topic: {msg.topic} payload: {payload}")
 
-            co2sensor_data = CO2SensorEdge()
-            co2sensor_data.create_record(**payload)
-            session.add(co2sensor_data)
+            akizuki_soc_data = AkizukiSocData()
+            akizuki_soc_data.create_record(**payload)
+            session.add(akizuki_soc_data)
             session.commit()
             logging.info(f"data commited!!")
         except Exception as e:
